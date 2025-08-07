@@ -23,7 +23,7 @@ const dev = {
     forget_pass_key: process.env.FORGET_PASS_KEY || "",
   },
   client: {
-    url: process.env.CLIENT_URL || "",
+    url: process.env.CLIENT_URL || "http://localhost:5173",
   },
   key: {
     access_key: process.env.ACCESS_KEY || "",
