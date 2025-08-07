@@ -58,9 +58,19 @@ const userLoginService = async (res, email, password) => {
 // user log out service
 const userLogOutService = async (res) => {
   try {
-    // clear token from cookie
-    res.clearCookie("accessToken");
-    res.clearCookie("refreshToken");
+    res.clearCookie("accessToken", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      path: "/",
+    });
+
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      secure: true,
+      sameSite: "None",
+      path: "/",
+    });
   } catch (error) {
     throw error;
   }
