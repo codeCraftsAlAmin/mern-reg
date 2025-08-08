@@ -8,6 +8,7 @@ const setAccessToken = async (res, accessToken) => {
       httpOnly: true,
       secure: isProduction,
       sameSite: isProduction ? "none" : "lax",
+      path: "/",
     });
   } catch (error) {
     throw error;
@@ -22,6 +23,7 @@ const setRefreshToken = async (res, refreshToken) => {
       httpOnly: true,
       secure: isProduction,
       sameSite: isProduction ? "none" : "lax",
+      path: "/",
     });
   } catch (error) {
     throw error;
